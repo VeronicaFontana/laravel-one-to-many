@@ -1,18 +1,24 @@
 @import '~bootstrap/scss/bootstrap';
 
+@import "./partials/header";
+
 header{
     height: 60px;
 }
 
 .main-wrapper{
     height: calc(100vh - 60px);
+
+    .content{
+        overflow: auto;
+    }
 }
 
 aside{
-    width: 250px;
+    width: 350px;
     height: 100%;
     color: white;
-    line-height: 2rem;
+    line-height: 2.5rem;
 
     ul{
         list-style: none;

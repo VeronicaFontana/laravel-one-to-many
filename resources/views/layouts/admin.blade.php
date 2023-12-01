@@ -18,7 +18,7 @@
 
     <div class="main-wrapper d-flex">
         @include("admin.partials.sidebar")
-        <div class="p-5 w-100"">
+        <div class="p-5 w-100 content">
             @yield("content")
         </div>
     </div>
