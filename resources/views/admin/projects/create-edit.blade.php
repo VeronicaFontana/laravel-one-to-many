@@ -26,13 +26,11 @@
         </div>
         <div class="mb-3">
             <label for="image" class="form-label">Immagine</label>
-            <input type="file" class="form-control @error("image") is-invalid @enderror" id="image" name="image" value="{{ old("image", $project?->image) }}">
+            <input type="file" onchange="showImage(event)" class="form-control @error("image") is-invalid @enderror" id="image" name="image" value="{{ old("image", $project?->image) }}">
             @error("image")
                 <p class="text-danger">{{ $message }}</p>
             @enderror
-            @if ($project)
-                <img src="{{ asset("storage/" . $project->image) }}"/>
-            @endif
+            <img id="thumb" width="150" onerror="this.src='/img/placeholder.webp'  src="{{ asset('storage/' . $project?->image) }}" />
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Descrizione</label>
@@ -69,6 +67,11 @@
             .catch( error => {
                 console.error( error );
             } );
+
+        function showImage(event){
+            const thumb = document.getElementById('thumb');
+            thumb.src = URL.createObjectURL(event.target.files[0]);
+        }
     </script>
 
 @endsection

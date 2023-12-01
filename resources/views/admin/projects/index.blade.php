@@ -24,7 +24,7 @@
                     <tr>
                         <td>{{ $project->id }}</td>
                         <td>{{ $project->name }}</td>
-                        <td>{{ $project->description }}</td>
+                        <td>{!! $project->description !!}</td>
                         <td>{{ $project->creation_date }}</td>
                         <td>
                             <a class="btn btn-info mb-1" href="{{ route("admin.projects.show", $project) }}"><i class="fa-solid fa-circle-info" style="color: #ffffff;"></i></a>
