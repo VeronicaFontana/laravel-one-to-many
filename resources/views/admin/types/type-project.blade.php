@@ -25,7 +25,7 @@
                         <td>
                             <ul class="list-group">
                                 @foreach ($type->projects as $project)
-                                    <li class="list-group-item">{{ $project->name }}</li>
+                                    <li class="list-group-item"><a href="{{ route("admin.projects.show", $project) }}">{{ $project->name }}</a></li>
                                 @endforeach
                             </ul>
                         </td>
