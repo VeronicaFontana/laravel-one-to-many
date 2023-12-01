@@ -21,7 +21,7 @@
                 @foreach ($types as $type)
                     <tr>
                         <td>{{ $type->id }}</td>
-                        <td>{{ $type->name }}</td>
+                        <td><b>{{ $type->name }}</b></td>
                         <td>
                             <ul class="list-group">
                                 @foreach ($type->projects as $project)

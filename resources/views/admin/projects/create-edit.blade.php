@@ -36,7 +36,7 @@
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Descrizione</label>
-            <textarea class="form-control @error("description") is-invalid @enderror" id="description" rows="3" name="description">{{ old("description",$project?->description)  }}</textarea>
+            <textarea id="description" class="form-control" name="description" style="height: 200px" >{{ old('description',$project?->description) }}</textarea>
             @error("description")
                 <p class="text-danger">{{ $message }}</p>
             @enderror
@@ -62,5 +62,13 @@
         <button type="submit" class="btn btn-primary">Invia</button>
         <button type="reset" class="btn btn-secondary">Annulla</button>
     </form>
+
+    <script>
+        ClassicEditor
+            .create( document.querySelector( "#description" ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
 
 @endsection
