@@ -48,6 +48,16 @@
                 <p class="text-danger">{{ $message }}</p>
             @enderror
         </div>
+        <div class="mb-3">
+            <label for="type_id" class="form-label">Tipologia</label>
+            <select class="form-select" name="type_id" id="type_id">
+                <option value="">Selezionare una tipologia di progetto</option>
+                @foreach ($types as $type)
+                    <option value="{{ $type->id }}" {{ old("type_id", $project?->type_id) == $type->id? "selected" : "" }}>{{ $type->name }}</option>
+                @endforeach
+            </select>
+        </div>
+
 
         <button type="submit" class="btn btn-primary">Invia</button>
         <button type="reset" class="btn btn-secondary">Annulla</button>

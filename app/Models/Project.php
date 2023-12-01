@@ -15,6 +15,6 @@ class Project extends Model
     }
 
     protected $fillable = [
-        "name", "tecnology_id","image", "image_original_name", "slug", "description", "creation_date",
+        "name", "type_id","image", "image_original_name", "slug", "description", "creation_date",
     ];
 }
