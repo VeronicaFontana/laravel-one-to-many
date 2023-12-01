@@ -16,6 +16,10 @@
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><b>Creato il:</b> {{ Helper::formatDate($project->date) }}</li>
+                @if ($project->type)
+                    <li class="list-group-item"><b>Tipologia:</b> {{ $project->type->name }}</li>
+                @endif
+
             </ul>
             <div class="card-body">
                 <a class="btn btn-warning" href="{{ route("admin.projects.edit", $project) }}" class="card-link"><i class="fa-solid fa-pencil"></i></a>
