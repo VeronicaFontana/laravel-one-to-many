@@ -12,7 +12,7 @@
             <p>{{ $project->image_original_name }}</p>
             <div class="card-body">
                 <h5 class="card-title">{{ $project->name }}</h5>
-                <p class="card-text">{{ $project->description }}</p>
+                <p class="card-text">{!! $project->description !!}</p>
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><b>Creato il:</b> {{ Helper::formatDate($project->date) }}</li>
